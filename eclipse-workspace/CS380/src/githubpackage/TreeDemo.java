@@ -203,14 +203,18 @@ class BinarySearchTree {
 
 public class TreeDemo {
     public static void main(String[] args) {
+        int[] valuesInTree = {24, 80, 18, 9, 90, 22};
+        int[] valuesNotInTree = {91, 8, 50};
+        
         BinarySearchTree t1 = new BinarySearchTree();
-        t1.insert(24);
-        t1.insert(80);
-        t1.insert(18);
-        t1.insert(9);
-        t1.insert(90);
-        t1.insert(22);
-
+        
+        for (int n : valuesInTree) {
+            t1.insert(n);
+        }
+        
+        System.out.println("\nsmallest value in the tree: " + t1.getMin(t1.root));
+        System.out.println("largest value in the tree: " + t1.getMax(t1.root) + "\n");
+        
         System.out.print("in-order :   ");
         t1.inOrderTraversal(t1.root);
         System.out.println();
@@ -221,6 +225,13 @@ public class TreeDemo {
         
         System.out.print("post-order :   ");
         t1.postOrderTraversal(t1.root);
-        System.out.println();
+        System.out.println("\n");
+        
+        for (int n : valuesInTree) {
+            System.out.println(n + " is in the tree: " + t1.find(t1.root, n));
+        }
+        for (int n : valuesNotInTree) {
+            System.out.println(n + " is in the tree: " + t1.find(t1.root, n));
+        }
     }
 }
