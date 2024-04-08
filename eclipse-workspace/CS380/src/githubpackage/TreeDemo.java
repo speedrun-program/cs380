@@ -93,13 +93,19 @@ class BinarySearchTree {
 
 
 
-    /*
-    post-order traversal
-    */
-
+    /**
+     * post-order traversal
+     * Prints the value of every node post-order
+     * @param root The root node of the current subtree
+     */
     public void postOrderTraversal(Node root) {
-        //implement in here
-
+        if (root == null) {
+            return;
+        }
+        
+        preOrderTraversal(root.left);
+        preOrderTraversal(root.right);
+        System.out.print(root.value + " ");
     }
 
 
