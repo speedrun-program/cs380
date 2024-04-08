@@ -57,7 +57,8 @@ class BinarySearchTree {
         } //closing main if-else 
     }
     
-
+    
+    
     /**
      * pre-order traversal
      * Prints the value of every node pre-order
@@ -75,11 +76,19 @@ class BinarySearchTree {
 
 
 
-    /*
-    in-order traversal
-    */
+    /**
+     * in-order traversal
+     * Prints the value of every node in-order
+     * @param root The root node of the current subtree
+     */
     public void inOrderTraversal(Node root) {
-        //implement in here
+        if (root == null) {
+            return;
+        }
+        
+        preOrderTraversal(root.left);
+        System.out.print(root.value + " ");
+        preOrderTraversal(root.right);
     }
 
 
