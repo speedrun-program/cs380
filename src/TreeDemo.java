@@ -1,7 +1,4 @@
 
-package githubpackage;
-
-
 /**
  * A BST node class
  */
